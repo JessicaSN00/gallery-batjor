@@ -1,0 +1,24 @@
+<%- include ../partials/_header %>
+<h1>Gallery ImageUpload</h1>
+<hr class="uk-divider-icon">
+
+<div class="form-area">
+<div class="form-area_upload-area">
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+    <div class="uk-margin" uk-margin>
+        <div uk-form-custom="target: true">
+            <input name="userImage" type="file">
+            <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+        </div>
+        <button class="uk-button uk-button-default">Submit</button>
+    </div>
+    </form>
+    <br>
+    <div class="upload-area_image">
+        <% if(currentUser){ %>
+        <img id="<%= currentUser._id%>" data-src="<%= typeof file != 'undefined' ? file : ''%>" width="800" height="600" alt="" uk-img>
+        <%}%>
+    </div>
+</div>
+</div>
+<%- include ../partials/_footer %>

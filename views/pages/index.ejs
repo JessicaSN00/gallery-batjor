@@ -1,0 +1,16 @@
+<%- include ../partials/_header %>
+<h1>Gallery</h1>
+<hr class="uk-divider-icon">
+
+<div class="gallery-body">
+<% if(currentUser.role == 'normal'){ %>
+    <% for(var display in images) { %>
+    <div class="gallery-body_image-area">   
+        <img class="gallery-body_image" data-src="/usersImg/<%=currentUser.username%>/<%=images[display]%>" width="800" height="600" alt="" uk-img>
+    </div>
+    <% } %>
+</div>
+<% } else {%>
+<img class="gallery-body_cartel" data-src="/img/cartel-home.jpg" width="400" height="300" alt="" uk-img>
+<% } %>
+<%- include ../partials/_footer %>

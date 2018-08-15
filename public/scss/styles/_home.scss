@@ -1,0 +1,31 @@
+.gallery-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    flex-flow: row wrap;
+}
+
+.gallery-body_image-area {
+    min-height: 400px;
+    max-height: 500px;
+    flex: 1 0 calc(25% - 100px);
+    border-width: 2px;
+    border-style: solid;
+    border-color: #FFF;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    max-width: 25%;
+    box-shadow: 0px 0px 10px #000;
+}
+
+.gallery-body_image {
+    height: 100%;
+}
+
+.gallery-body_cartel {
+    width: 80%;
+    height: 100vh !important;
+}
+

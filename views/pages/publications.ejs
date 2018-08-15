@@ -1,0 +1,63 @@
+<%- include ../partials/_header %>
+<h1>Gallery Publications<h1>
+<hr class="uk-divider-icon">
+
+<div class="form-area_publications">
+    <form action="" method="POST">
+        <fieldset class="uk-fieldset">
+    
+            <legend class="uk-legend uk-text-medium">Tell us Something...</legend>
+    
+            <div class="uk-margin">
+                <input class="uk-input uk-text-small" name="title" type="text" placeholder="Title">
+                <% if(currentUser) { %>
+                <input class="uk-input uk-text-small" name="role"  value="<%= currentUser.role %>" type="hidden" placeholder="<%= currentUser.role %>">
+                <% } else{ %>
+                <input class="uk-input uk-text-small" name="role"  value="anonymous" type="hidden" placeholder="Anonymous">
+                <% } %>                
+            </div>
+            <div class="uk-margin">
+                <textarea class="uk-textarea uk-text-small" name="text" rows="3" placeholder="Textarea"></textarea>
+            </div>
+            <button class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" type="submit">Submit</button>
+        </fieldset>
+    </form>
+</div>
+<!-- Comment UiKit -->
+<% publications.forEach((publications) => {%>
+<div class="form-area_comment-area">
+    <div class="comment-area_comment">
+        <article class="uk-comment uk-comment-primary">
+            <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
+            <% if(publications.role == 'anonymous') { %> 
+            <div class="uk-width-auto">
+            <img class="uk-comment-avatar" src="/img/anonymous-logo.png" width="80" height="80" alt="">
+            </div>
+            <% } else if(publications.role == 'normal') { %> 
+            <div class="uk-width-auto">
+            <img class="uk-comment-avatar" src="/img/normal-logo.png" width="80" height="80" alt="">
+            </div>
+            <% } else { %> 
+            <div class="uk-width-auto">
+            <img class="uk-comment-avatar" src="/img/stalker-logo.png" width="80" height="80" alt="">
+            </div>
+            <% } %>
+                <div class="uk-width-expand">
+                    <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#"><%= publications.title %></a></h4>
+                    <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                        <li><%= publications.role %></li>  
+                        <li><%= publications.createdAt%></li>
+                    </ul>
+                </div>
+            </header>
+            <div class="uk-comment-body uk-text-left">
+                <p><%= publications.text %></p>
+            </div>
+        </article>
+    </div>
+</div>
+<%})%>
+
+<!--<div class="form-area">
+</div>-->
+<%- include ../partials/_footer %>

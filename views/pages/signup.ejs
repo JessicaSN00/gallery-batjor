@@ -1,0 +1,27 @@
+<%- include ../partials/_header %>
+
+<div class="form-signup_area">
+<div class="form-area_login-signup">
+    <h2 class="text-batjor">Join Us!</h2>
+    <form action="" method="POST">
+        <input class="uk-input" type="text" name="username" placeholder="Name" required />
+        <input class="uk-input" type="password" name="password" placeholder="Password" required />
+        <div uk-form-custom="target: > * > span:first-child">
+            <select name="role">
+                <option value="">Select Type...</option>
+                <option value=normal>Normal</option>
+                <option value=anonymous>Anonymous</option>
+                <option value=stalker>Stalker</option>
+            </select>
+            <button class="uk-button uk-button-default" type="button" tabindex="-1">
+                <span></span>
+                <span uk-icon="icon: chevron-down"></span>
+            </button>
+        </div>
+        <br>
+        <button class="uk-button uk-button-primary" type="submit">Submit</button>
+    </form>
+</div>
+</div>
+
+<%- include ../partials/_footer %>
