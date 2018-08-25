@@ -14,7 +14,7 @@ const passportsetup = require('./passportsetup');
 
 const app = express();
 
-moongose.connect("mongodb://JessicaSN:jsn980930@ds121382.mlab.com:21382/gallery");
+moongose.connect("mongodb://JessicaSN:jsn980930@ds121382.mlab.com:21382/gallery", {useNewUrlParser: true});
 
 passportsetup();
 
