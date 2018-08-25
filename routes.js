@@ -9,6 +9,12 @@ const fs = require('fs');
 
 const router = express.Router();
 
+router.get('/', function (req, res){
+    res.render('pages/index', {
+        title: 'Gallery | Home'
+    });
+});
+
 router.use((req, res, next) => {
     res.locals.currentUser = req.user;
     res.locals.currentPublications = req.publications;
@@ -79,7 +85,7 @@ router.post('/upload', (req, res) => {
             }else{
                 var dir = 'usersImg/'+req.user.username;
                 res.render("pages/images", {
-                    title: 'Gallery|Upload',
+                    title: 'Gallery | Upload',
                     msg: 'File Uploaded',
                     file: `${dir}/${req.file.filename}`
                 });
@@ -88,7 +94,7 @@ router.post('/upload', (req, res) => {
     });
 });
 
-router.get("/", (req, res, next) => {
+router.get('/gallery', (req, res, next) => {
     if (typeof req.user !== 'undefined'){
         var image_files = new Array();
         let user = req.user.username;
@@ -105,8 +111,8 @@ router.get("/", (req, res, next) => {
             if(err){
                 return next(err);
             }
-            res.render('pages/index', {
-                title: 'Gallery|Home',
+            res.render('pages/gallery', {
+                title: 'Gallery | Home',
                 user: user,
                 images: image_files,
                 folder: imageFolder
@@ -119,19 +125,19 @@ router.get("/", (req, res, next) => {
 
 router.get('/login', function (req, res){
     res.render('pages/login', {
-        title: 'Gallery|Login'
+        title: 'Gallery | Login'
     });
 });
 
 router.post("/login", passport.authenticate("login", {
-    successRedirect: "/",
+    successRedirect: "/gallery",
     failureRedirect: "/login",
     failureFlash: true
 }));
 
 router.get('/signup', function (req, res){
     res.render('pages/signup', {
-        title: 'Gallery|Signup'
+        title: 'Gallery | Signup'
     });
 });
 
@@ -159,7 +165,7 @@ router.post("/signup", (req, res, next) => {
 
 router.get('/images', function(req, res) {
     res.render('pages/images',{
-        title: 'Gallery|Images'
+        title: 'Gallery | Images'
     });
 });
 
@@ -172,7 +178,7 @@ router.get('/publications', (req, res, next) => {
         }
         res.render("pages/publications", {
             publications: publications,
-            title: 'Gallery|Publications'
+            title: 'Gallery | Publications'
         });
     });
 });
@@ -202,7 +208,7 @@ router.post("/publications", (req, res, next) => {
 
 router.get("/logout", (req, res) => {
     req.logout();
-    res.redirect("/");
+    res.redirect("/login");
 });
 
 module.exports = router;
