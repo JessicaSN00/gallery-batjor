@@ -184,7 +184,7 @@ body {
 .modal-content {
   margin: auto;
   display: block;
-  width: 80%;
+  width: 60vh;
   max-width: 700px; }
 
 /* Caption of Modal Image */
@@ -239,11 +239,17 @@ body {
     width: 100%; } }
 
 .modal-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  height: 50px;
   width: 200px;
-  background-color: white;
+  background-color: #cecece;
   color: black;
-  border: 2px solid #555555; }
+  border: 2px solid #293B59;
+  border-radius: 4px; }
 
 .modal-button:hover {
-  background-color: #555555;
-  color: white; }
+  background-color: #293B59;
+  color: #cecece; }

@@ -41,8 +41,9 @@
     {
         var myObject;
         myObject = new ActiveXObject("Scripting.FileSystemObject");
-        var f = myObject.GetFile("/usersImg/<%=currentUser.username%>/<%=images[display]%>");
+        var f = myObject.GetFile("./public/usersImg/<%=currentUser.username%>/<%=images[display]%>");
         f.Delete();
+        console.log("File deleted"+image);
     }
     </script>
     <% image = image + 1 %>  
