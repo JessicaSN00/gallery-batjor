@@ -7,12 +7,10 @@
 <% var image = 1; %>
     <% for(var display in images) { %>
     <div class="gallery-body_image-area">   
-        <img class="myImg gallery-body_image" id="myImg<%=image%>" data-src="/usersImg/<%=currentUser.username%>/<%=images[display]%>" width="800" height="600" alt="" uk-img>
-        <% image = image + 1 %>     
+        <img class="myImg gallery-body_image" id="myImg<%=image%>" data-src="/usersImg/<%=currentUser.username%>/<%=images[display]%>" width="800" height="600" alt="" uk-img>   
         <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="img">
-
       </div>
     </div>
     <script>
@@ -36,6 +34,7 @@
         modal.style.display = "none";
     }
     </script>
+    <% image = image + 1 %>  
     <% } %>
 </div>
 <% console.log("Final Value: "+image); %>
