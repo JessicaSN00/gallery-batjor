@@ -11,11 +11,9 @@
         <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="img">
-        <div class="modal-button">
         <form>
-        <input type="button" value="DeleteFile">
+        <input class="modal-button" type="button" value="Delete Image">
         </form>
-        </div>
       </div>
     </div>
     <script>
@@ -43,7 +41,7 @@
     {
         var myObject;
         myObject = new ActiveXObject("Scripting.FileSystemObject");
-        var f = myObject.GetFile("c:\\test.txt");
+        var f = myObject.GetFile("/usersImg/<%=currentUser.username%>/<%=images[display]%>");
         f.Delete();
     }
     </script>
