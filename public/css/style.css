@@ -149,12 +149,12 @@ body {
   margin: 0 auto;
   margin-top: 20vh; }
 
-#myImg2 {
+#myImg {
   border-radius: 15px;
   cursor: pointer;
   transition: 0.3s; }
 
-#myImg2:hover {
+#myImg:hover {
   opacity: 0.7; }
 
 /* The Modal (background) */
