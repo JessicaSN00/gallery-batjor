@@ -11,6 +11,11 @@
         <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="img">
+        <div class="modal-button">
+        <form>
+        <input type="button" value="DeleteFile">
+        </form>
+        </div>
       </div>
     </div>
     <script>
@@ -32,6 +37,14 @@
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() { 
         modal.style.display = "none";
+    }
+    //Remove Image
+    function remove()
+    {
+        var myObject;
+        myObject = new ActiveXObject("Scripting.FileSystemObject");
+        var f = myObject.GetFile("c:\\test.txt");
+        f.Delete();
     }
     </script>
     <% image = image + 1 %>  
