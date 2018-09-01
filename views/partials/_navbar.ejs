@@ -1,0 +1,19 @@
+<nav class="uk-navbar-container" uk-navbar>
+  <div class="uk-navbar-left">
+      <ul class="uk-navbar-nav">
+      <% if(typeof currentUser !== 'undefined') { %>
+          <a class="uk-navbar-item uk-logo" href="/">Logo</a>
+          <li class="uk-active"><a href="/images">Images</a></li>
+          <li class="uk-active"><a href="/publications">Publication</a></li>
+          <li class="uk-active"><a href="/logout">Logout</a></li>
+          <li><a href="/">Hi, <%= currentUser.username%> <%=currentUser.role %></a></li>
+          <% } else { %>
+          <a class="uk-navbar-item uk-logo" href="/">Logo</a>
+          <li class="uk-active"><a href="/login">Login</a></li>
+          <li class="uk-active"><a href="/signup">Signup</a></li>
+          <li class="uk-active"><a href="/images">Images</a></li>
+          <li class="uk-active"><a href="/publications">Publication</a></li>
+          <% } %>
+      </ul>
+  </div>
+</nav>
