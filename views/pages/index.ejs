@@ -1,7 +1,6 @@
 <%- include ../partials/_header %>
-<h1>Gallery</h1>
-<hr class="uk-divider-icon">
 
+<<<<<<< HEAD
 <div class="gallery-body">
 <% if(currentUser.role == 'normal'){ %>
 <% var image = 1; %>
@@ -55,3 +54,40 @@
 <% } %>
 
 <%- include ../partials/_footer %>
+=======
+<body class="no-background">
+  <%- include ../partials/_navbar %>
+  <div class="index__main-title">
+    <div class="index__main-title_text">
+      BATJOR
+    </div>
+    <div class="index__main-title_description">
+      Best place to share ideas along the world
+    </div>
+  </div> 
+
+  <div class="index__features">
+    <div class="index__features-card">
+      <div class="index__features-card_title">
+        
+      </div>
+      <div class="index__features-card_image">
+
+      </div>
+      <div class="index__features-card_description">
+        
+      </div>
+    </div>
+  </div>
+</body>
+
+
+<head>
+  <script>
+    $( document ).ready(function() {
+      var scene = $('#scene').get(0);
+      var parallaxInstance = new Parallax(scene);
+    });
+  </script>
+</head>
+>>>>>>> c148bf56e3e2ae5ffa816530a0283cdd8b70e53e

@@ -81,6 +81,9 @@ body {
   height: 100%;
   min-height: 100vh; }
 
+.no-background {
+  background: transparent !important; }
+
 .uk-navbar-container {
   background-color: #0f0f0f !important; }
 
@@ -238,6 +241,7 @@ body {
   .modal-content {
     width: 100%; } }
 
+<<<<<<< HEAD
 .modal-button {
   display: block;
   margin-left: auto;
@@ -253,3 +257,24 @@ body {
 .modal-button:hover {
   background-color: #293B59;
   color: #cecece; }
+=======
+.index__main-title {
+  width: 100%;
+  text-align: center;
+  height: 250px;
+  margin-top: 80px; }
+
+.index__main-title_text {
+  width: 40%;
+  border: 2px solid #292929;
+  margin: 0 auto;
+  height: 270px;
+  font-size: 10vw; }
+
+.index__main-title_description {
+  width: 20%;
+  margin: 0 auto;
+  font-size: 25px;
+  border-style: solid;
+  border-width: 0px 2px 2px 2px; }
+>>>>>>> c148bf56e3e2ae5ffa816530a0283cdd8b70e53e

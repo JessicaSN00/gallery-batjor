@@ -9,27 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/js/uikit-icons.min.js"></script>
     <script src="uikit/dist/js/uikit-icons.min.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/parallax.js"></script>
     <title><%= title %></title>
 </head>
-<body>
-<nav class="uk-navbar-container" uk-navbar>
-    <div class="uk-navbar-left">
-        <ul class="uk-navbar-nav">
-        <% if(currentUser) { %>
-            <a class="uk-navbar-item uk-logo" href="/">Logo</a>
-            <li class="uk-active"><a href="/images">Images</a></li>
-            <li class="uk-active"><a href="/publications">Publication</a></li>
-            <li class="uk-active"><a href="/logout">Logout</a></li>
-
-            <li><a href="/">Hi, <%= currentUser.username%> <%=currentUser.role %></a></li>
-            <% } else{ %>
-            <a class="uk-navbar-item uk-logo" href="/">Logo</a>
-            <li class="uk-active"><a href="/login">Login</a></li>
-            <li class="uk-active"><a href="/signup">Signup</a></li>
-            <li class="uk-active"><a href="/images">Images</a></li>
-            <li class="uk-active"><a href="/publications">Publication</a></li>
-            <% } %>
-        </ul>
-    </div>
-</nav>
-    
