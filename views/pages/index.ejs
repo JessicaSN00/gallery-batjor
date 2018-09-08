@@ -1,60 +1,5 @@
 <%- include ../partials/_header %>
 
-<<<<<<< HEAD
-<div class="gallery-body">
-<% if(currentUser.role == 'normal'){ %>
-<% var image = 1; %>
-    <% for(var display in images) { %>
-    <div class="gallery-body_image-area">   
-        <img class="myImg gallery-body_image" id="myImg<%=image%>" data-src="/usersImg/<%=currentUser.username%>/<%=images[display]%>" width="800" height="600" alt="" uk-img>   
-        <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img">
-        <form>
-        <input class="modal-button" type="button" value="Delete Image">
-        </form>
-      </div>
-    </div>
-    <script>
-    // Get the modal
-    var modal = document.getElementById('myModal');
-
-    // Get the image and insert it inside the modal - use its "alt" text as a caption
-    var img = document.getElementById('myImg<%=image%>');
-    console.log(img);
-    var modalImg = document.getElementById("img");
-    img.onclick = function(){
-        modal.style.display = "block";
-        modalImg.src = this.src;
-    }
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() { 
-        modal.style.display = "none";
-    }
-    //Remove Image
-    function remove()
-    {
-        var myObject;
-        myObject = new ActiveXObject("Scripting.FileSystemObject");
-        var f = myObject.GetFile("./public/usersImg/<%=currentUser.username%>/<%=images[display]%>");
-        f.Delete();
-        console.log("File deleted"+image);
-    }
-    </script>
-    <% image = image + 1 %>  
-    <% } %>
-</div>
-<% console.log("Final Value: "+image); %>
-<% } else {%>
-<img class="gallery-body_cartel" data-src="/img/cartel-home.jpg" width="400" height="300" alt="" uk-img>
-<% } %>
-
-<%- include ../partials/_footer %>
-=======
 <body class="no-background">
   <%- include ../partials/_navbar %>
   <div class="index__main-title">
@@ -90,4 +35,3 @@
     });
   </script>
 </head>
->>>>>>> c148bf56e3e2ae5ffa816530a0283cdd8b70e53e

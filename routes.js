@@ -9,7 +9,7 @@ const fs = require('fs');
 
 const router = express.Router();
 
-router.get('/', function (req, res){
+router.get('/', function (req, res) {
     res.render('pages/index', {
         title: 'Gallery | Home'
     });
@@ -209,6 +209,21 @@ router.post("/publications", (req, res, next) => {
 router.get("/logout", (req, res) => {
     req.logout();
     res.redirect("/login");
+});
+
+router.get('/gallery/delete/:username/:image', (req, res) => {
+    let username = req.params.username;
+    let image = req.params.image;
+    console.log("Delete image: "+username + image);
+
+    fs.unlink('public/usersImg/'+username+'/'+image, (err) => {
+        if (err){
+            throw err;
+        }else{
+        console.log("Image deleted");
+        res.redirect("/gallery");
+        }
+      });
 });
 
 module.exports = router;

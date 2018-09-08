@@ -88,15 +88,17 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
-    height: 50px;
+    padding: 10px;
     width: 200px;
     background-color:#cecece;
     color: black;
     border: 2px solid #293B59;
     border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
 }
 .modal-button:hover{
     background-color: #293B59;
     color: #cecece;
+    text-decoration: none;
 }

@@ -4,9 +4,10 @@
       <% if(typeof currentUser !== 'undefined') { %>
           <a class="uk-navbar-item uk-logo" href="/">Logo</a>
           <li class="uk-active"><a href="/images">Images</a></li>
+          <li class="uk-active"><a href="/gallery">Gallery</a></li>
           <li class="uk-active"><a href="/publications">Publication</a></li>
           <li class="uk-active"><a href="/logout">Logout</a></li>
-          <li><a href="/">Hi, <%= currentUser.username%> <%=currentUser.role %></a></li>
+          <li><a href="/">Hi, <%= currentUser.username %> <%= currentUser.role %></a></li>         
           <% } else { %>
           <a class="uk-navbar-item uk-logo" href="/">Logo</a>
           <li class="uk-active"><a href="/login">Login</a></li>
