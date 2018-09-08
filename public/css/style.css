@@ -187,8 +187,8 @@ body {
 .modal-content {
   margin: auto;
   display: block;
-  width: 60vh;
-  max-width: 700px; }
+  width: 100vh;
+  max-width: 100vh; }
 
 /* Caption of Modal Image */
 #caption {
